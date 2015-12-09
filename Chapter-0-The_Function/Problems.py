@@ -45,3 +45,17 @@ def inv_dict(d):
 	return {y:x for x,y in d.items()}
 # >>> Problems.inv_dict({'thank you': 'merci', 'goodbye': 'au revoir'})
 # {'au revoir': 'goodbye', 'merci': 'thank you'}
+
+# Problem 0.8.5
+# First write a procedure row(p, n) with the following spec:
+# input: integer p, integer n
+# output: n-element list such that element i is p+i
+# example: given p = 10 and n = 4, return [10,11,12,13]
+# Next write a comprehension whose value is a 15-element list of 20-element lists such that the jth element of the ith list is i + j
+# You can use row(p, n) in your comprehension.
+# Finally, write the same comprehension but without using row(p, n). Hint: replace the call to row(p, n) with the comprehension
+# that forms the body of row(p, n)
+def row(p, n):
+	return list(range(p,p+n))
+# >>> Problems.row(10,4)
+# [10, 11, 12, 13]
