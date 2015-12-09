@@ -32,3 +32,16 @@ def tuple_sum(A, B):
 	return tuple_sum
 # >>> Problems.tuple_sum([(1,2),(10,20)],[(3,4),(30,40)])
 # [(4, 6), (40, 60)]
+
+# Problem 0.8.4 inv_dict(d)
+# input: dictionary d representing an invertible function f
+# output: dictionary representing the inverse of f, the returned dictionary's keys are the values
+# of d and its values are the keys of d
+# Example: given an English-French dictionary
+# {'thank you': 'merci', 'goodbye', 'au revoir'}
+# return a French-English dictionary
+# {'merci':'thank you', 'au revoir': 'goodbye'}
+def inv_dict(d):
+	return {y:x for x,y in d.items()}
+# >>> Problems.inv_dict({'thank you': 'merci', 'goodbye': 'au revoir'})
+# {'au revoir': 'goodbye', 'merci': 'thank you'}
