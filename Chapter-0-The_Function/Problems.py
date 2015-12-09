@@ -26,6 +26,9 @@ def cubes(L):
 # of the ith pair in A and the first element of the ith pair in B
 # Example: given lists [(1,2),(10,20)] and [(3,4),(30,40)], return [(4,6),(40,60)]
 def tuple_sum(A, B):
-	return [(xA + xB, yA + yB) for (xA, yA) in A for (xB, yB) in B]
+	tuple_sum = []
+	for index in range(len(A)):
+		tuple_sum.append((A[index][0] + B[index][0], A[index][1] + B[index][1]))
+	return tuple_sum
 # >>> Problems.tuple_sum([(1,2),(10,20)],[(3,4),(30,40)])
-# [(4, 6), (31, 42), (13, 24), (40, 60)]
+# [(4, 6), (40, 60)]
