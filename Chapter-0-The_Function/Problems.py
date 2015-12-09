@@ -102,3 +102,5 @@ def comprehensionWithoutRow():
 #[15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34]
 #]
 # (Personally formatted so easier to look at)
+
+# Problem 0.8.6 through Problem 0.8.11 done on paper (not programs)
