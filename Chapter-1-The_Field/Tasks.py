@@ -25,3 +25,9 @@ def task141():
 # >>> plot({1+2j+z for z in S}, 4)
 def task143():
 	plot({1+2j+z for z in S}, 4)
+
+# Task 1.4.7
+# Create a new plot titled "My scaled points" using a comprehension as in Task 1.4.3.
+# The points in the new plot should be halves of the points in S.
+def task147():
+	plot({0.5*z for z in S}, 4)
