@@ -31,3 +31,9 @@ def task143():
 # The points in the new plot should be halves of the points in S.
 def task147():
 	plot({0.5*z for z in S}, 4)
+
+# Task 1.4.8
+# Create a new plot in which the points of S are rotated by 90 degrees and scaled by 1/2.
+# Use a comprehension in which the points of S are multiplied by a single complex numbers
+def task148():
+	plot({0.5j*z for z in S}, 4)
