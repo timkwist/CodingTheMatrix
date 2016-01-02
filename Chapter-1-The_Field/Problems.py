@@ -42,3 +42,12 @@ def mySum(L):
 	for x in L:
 		current = current + x
 	return current
+
+# Problem 1.7.5: myProduct(L)
+# Input: list of numbers
+# Output: product of numbers in the list
+def myProduct(L):
+	current = 1 if len(L) > 0 else 0
+	for x in L:
+		current = current * x
+	return current
