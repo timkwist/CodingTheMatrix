@@ -62,3 +62,12 @@ def myMin(L):
 	for x in L:
 		current = x if x < current else current
 	return current
+
+# Problem 1.7.7: myConcat(L)
+# Input: list of strings
+# Output: concatentation of all the strings in L
+def myConcat(L):
+	current = ""
+	for x in L:
+		current += x
+	return current
