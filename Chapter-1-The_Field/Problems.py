@@ -71,3 +71,13 @@ def myConcat(L):
 	for x in L:
 		current += x
 	return current
+
+# Problem 1.7.8: myUnion(L)
+# Input: list of sets
+# Output: The union of all sets in L
+def myUnion(L):
+	current = set()
+	for x in L:
+		current = current | x
+	current = list(current)
+	return current
