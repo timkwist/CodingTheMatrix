@@ -51,3 +51,14 @@ def myProduct(L):
 	for x in L:
 		current = current * x
 	return current
+
+# Problem 1.7.6: myMin(L)
+# Input: list of numbers
+# Output: minimum number in the list
+def myMin(L):
+	if len(L) == 0:
+		raise ValueError('myMin() arg is an empty sequence')
+	current = L[0]
+	for x in L:
+		current = x if x < current else current
+	return current
