@@ -24,3 +24,21 @@ def my_lists(L):
 # Example: given f = {0:'a', 1:'b'} and g = {'a':apple, 'b':'banana'}, return {0:'apple', 1:'banana'}
 def my_function_composition(f,g):
 	return {x:g[y] for x, y in f.items()}
+
+# Python loop problems
+# For the procedures in the following five problems, use the following format:
+# def <ProcedureName>(L):
+# current = ...
+# for x in L:
+# 	current = ...
+# return current
+# Note: you are not allowed to use Python built-in procedures sum() and min()
+
+# Problem 1.7.4: mySum(L)
+# Input: list of numbers
+# Output: sum of numbers in the list
+def mySum(L):
+	current = 0
+	for x in L:
+		current = current + x
+	return current
