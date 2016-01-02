@@ -3,6 +3,8 @@
 from plotting import plot
 from image import file2image
 from image import color2gray
+from math import e
+from math import pi
 S = set({2 + 2j, 3 + 2j, 1.75 + 1j, 2 + 1j, 2.25 + 1j, 2.5 + 1j, 2.75 + 1j, 3 + 1j, 3.25 + 1j})
 
 # Task 1.4.1
@@ -69,16 +71,21 @@ def task1410(filename):
 	# Fix this by subtracting the y we get from the height (length of data)
 	pts = [x+(len(data)-y)*1j for y, datay in enumerate(data) for x, intensity in enumerate(datay) if data[y][x] < 120]
 	plot(pts, 190)
+	return pts # Not specified in task, but useful for later manipulation
 
 # Task 1.4.17
 # From the module math, import the definitions of e and pi. Let n be the integer 20. Let w be the complex number e^((2*pi*i)/n).
 # Write a comprehension yielding the list consisting of w^0, w^1, w^2, ... , w^n-1. Plot these complex numbers
 def task1714():
-	from math import e
-	from math import pi
-
 	n = 20
 	w = e**((2*pi*1j)/n)
 	listW = [w**x for x in range(n)]
 	plot(listW, 1)
 	# Neat circle!
+
+# Task 1.4.19 Recall from Task 1.4.10 the list pts of points derived from an image. Plot the rotation by pi/4
+# of the complex numbers comprimising pts.
+def task1419(filename):
+	pts = task1410(filename)
+	pts = [x * e**((pi/4)*1j) for x in pts]
+	plot(pts, 190)
