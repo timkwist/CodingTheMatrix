@@ -1,6 +1,8 @@
 # Author: Tim Kwist
 
 from plotting import plot
+from image import file2image
+from image import color2gray
 S = set({2 + 2j, 3 + 2j, 1.75 + 1j, 2 + 1j, 2.25 + 1j, 2.5 + 1j, 2.75 + 1j, 3 + 1j, 3.25 + 1j})
 
 # Task 1.4.1
@@ -37,3 +39,33 @@ def task147():
 # Use a comprehension in which the points of S are multiplied by a single complex numbers
 def task148():
 	plot({0.5j*z for z in S}, 4)
+
+# Task 1.4.9
+# Using a comprehension, create a new plot in which the points of S are rotated by 90 degrees,
+# scaled by 1/2, and then shifted down by one unit and the the right two units. Use a
+# comprehension in which the points of S are multiplied by one complex number and added to another.
+def task149():
+	plot({(0.5j*z) + (2+0j) for z in S}, 4)
+
+# Task 1.4.10
+# We have provided a module image with a procedure file2image(filename) that reads in an image
+# stored in a file in the .png format. Import this procedure and invoke it, providing as argument
+# the name of a file containing an image in this format, assigning the returned value to variable
+# data. An example grayscale image, img01.png, is available for download.
+# The value of data is a list of lists, and data[y][x] is the intensity of pixel (x,y). Pixel (0,0)
+# is at the bottom left of the image, and pixel (width-1, height-1) is at the top right. The intensity
+# of a pixel is a number between 0 (black) and 255 (white).
+# Use a comprehension to assign to a list pts the set of complex numbers x + yi such that the image
+# intensity of a pixel (x,y) is less than 120 and plot the list pts.
+def task1410(filename):
+	# Errata mentions to use color2gray to convert the 3-tuples that file2image gives into a single number
+	data = color2gray(file2image(filename))
+	# Original Pseudo-code
+	# for y = 0; y < len(data); y++
+	#	for x = 0; x < len(data[y]); x++
+	#		if(data[y][x] < 120)
+	#			pts.add(x + yj)
+	# pts = {x + yj for {y,x} in data if data[y][x] < 120}
+	# Fix this by subtracting the y we get from the height (length of data)
+	pts = [x+(len(data)-y)*1j for y, datay in enumerate(data) for x, intensity in enumerate(datay) if data[y][x] < 120]
+	plot(pts, 190)
