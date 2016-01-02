@@ -69,3 +69,16 @@ def task1410(filename):
 	# Fix this by subtracting the y we get from the height (length of data)
 	pts = [x+(len(data)-y)*1j for y, datay in enumerate(data) for x, intensity in enumerate(datay) if data[y][x] < 120]
 	plot(pts, 190)
+
+# Task 1.4.17
+# From the module math, import the definitions of e and pi. Let n be the integer 20. Let w be the complex number e^((2*pi*i)/n).
+# Write a comprehension yielding the list consisting of w^0, w^1, w^2, ... , w^n-1. Plot these complex numbers
+def task1714():
+	from math import e
+	from math import pi
+
+	n = 20
+	w = e**((2*pi*1j)/n)
+	listW = [w**x for x in range(n)]
+	plot(listW, 1)
+	# Neat circle!
